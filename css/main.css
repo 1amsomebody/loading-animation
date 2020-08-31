@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  min-width: 100vh;
+  font-family: "Roboto Slab","Arial", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/*=================
+STYLES
+=================*/
+
+
+.con {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+}
+
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 30%, #6c8cf7);
+  animation: loader 2s linear infinite;
+
+}
+
+@keyframes loader {
+  0% {
+    transform:
+      rotate(0deg)
+      perspective(1000px)
+      ;
+    }
+    100% {
+      transform:
+      rotate(360deg)
+    ;
+  }
+}
+
+.loader::before {
+  position: absolute;
+  content: "";
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #000;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.txt {
+  position: relative;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  color: rgb(37, 130, 192);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.txt::after {
+  content: "...";
+  left: 100%;
+  color: rgb(37, 130, 192);
+  animation: point 2s ease linear infinite;
+}
